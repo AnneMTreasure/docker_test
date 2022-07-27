@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ### Dockerfile
 
 The [Dockerfile](https://docs.docker.com/engine/reference/builder/) is the image manifest. It enables the user to define the image "recipe" by using a list of instructions for the **Docker engine**. The Docker engine uses those instructions to execute during the build time of the image. That includes leveraging other images, running commands lines operation to install requirements and dependencies, copying files and scripts from the local machine to the image, etc.

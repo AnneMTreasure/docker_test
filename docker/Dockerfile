@@ -1,20 +1,15 @@
-# See dockerfile commands reference: https://docs.docker.com/engine/reference/builder/
-FROM rocker/r-ver:4.2.0
 
-LABEL maintainer="Your Name <your_email@something.com>" \
-      info="useR!2022 Conference Docker for R Users Workshop" \
-      code="https://github.com/rsangole/user2022-r-for-docker" \
-      license="MIT"
+FROM rocker/r-ver:4.1.3
 
-ARG message1="Welcome to the useR!2022 Conference!!!"
+LABEL maintainer="Anne Treasure"
 
-ENV message2="Welcome to the Docker for R Users Workshop!!!"
+#ARG message1 = "Running data for Kumu"
 
 RUN mkdir scripts
 
 COPY *.R scripts/
 
-RUN Rscript scripts/Hello_useR!2022.R
+RUN Rscript scripts/docker_experi.R
 
 
 
