@@ -20,6 +20,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         man-db \
         less
 
+RUN npm install -g yarn
+
 # set the MRAN Build Date and then install the R packages needed using install2.r 
 # with the -r argument to point to MRAN Time Machine instead of CRAN
 ENV MRAN_BUILD_DATE=2022-01-01
