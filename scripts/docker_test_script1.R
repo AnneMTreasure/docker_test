@@ -16,8 +16,7 @@ source("functions/func_auth_google.R")
 # Authenticate Google Service Account (adapted from https://github.com/jdtrat/tokencodr-google-demo)
 auth_google(email = "*@talarify.co.za",
             service = "DOCKER_GSHEET_ACCESS",
-#            token_path = ".secret/DOCKER_GSHEET_ACCESS")
-            token_path = "DOCKER_GSHEET_ACCESS")
+            token_path = ".secret/DOCKER_GSHEET_ACCESS")
 
 
 ###### ---------- READ DATA FROM GOOGLE SHEET ---------- ######
