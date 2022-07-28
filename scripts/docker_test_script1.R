@@ -27,9 +27,12 @@ form_data <- read_sheet("https://docs.google.com/spreadsheets/d/1Uv0PQOn7jjpzQ2A
 sub1 <- form_data %>% 
   select(1:2, 1:2)
 
-###### ---------- WRITE TO GOOGL SPREADSHEET ---------- ######
-
-##### write to google spreadsheet
+###### ---------- WRITE TO GOOGLE SPREADSHEET ---------- ######
 ss = "https://docs.google.com/spreadsheets/d/1Uv0PQOn7jjpzQ2AyVpzUN_CulHjMpr8qsQMZehXmJ-c/edit#gid=0"
 
-docket_test_gsheet <- sheet_write(sub1, ss = ss, sheet = "sub1")
+docker_test_gsheet <- sheet_write(sub1, ss = ss, sheet = "sub1")
+
+
+###### ---------- WRITE RData FILE ---------- ######
+save(docker_test_gsheet, file = "data/docker_test_gsheet.RData")
+
