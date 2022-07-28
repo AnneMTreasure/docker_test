@@ -18,9 +18,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         texinfo \
         vim \
         man-db \
-        less
+        less \
+        node:6.7.0
 
-FROM node:6.7.0
 RUN npm install -g yarn
 
 # set the MRAN Build Date and then install the R packages needed using install2.r 
