@@ -1,7 +1,7 @@
 name: docker_test
 
 # Controls when the workflow will run
-#on:
+on:
 #  schedule:
 #    - cron: "00 04 * * *"
 #  push:
