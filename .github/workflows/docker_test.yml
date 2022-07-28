@@ -17,9 +17,9 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-20.04
     
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}    
+#    env:
+#      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+#      DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}    
     
     container:
       image: annemtreasure/dockertest
