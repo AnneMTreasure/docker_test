@@ -18,8 +18,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         texinfo \
         vim \
         man-db \
-        less \
-        node:6.7.0
+        less
+        
+# Update the repository sources list
+RUN apt-get update -qq 
+
+RUN apt-get -y install node
 
 RUN npm install -g yarn
 
