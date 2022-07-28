@@ -4,7 +4,7 @@
 FROM rocker/tidyverse:4.0.0 
 #has R version 4.0.0 and the tidyverse packages preinstalled
 
-LABEL maintainer="Anne Treasure"
+#LABEL maintainer="Anne Treasure"
 
 # This installs many of the linux libraries needed for the subsequent R packages to work. 
 # Also installed some useful utility packages like curl, jq and vim
@@ -29,11 +29,15 @@ RUN install2.r -r https://cran.microsoft.com/snapshot/${MRAN_BUILD_DATE} \
     --error \
     googlesheets4
 
-#RUN --mount=type=secret,id=GITHUB_TOKEN \
-#  --mount=type=secret,id=DOCKER_GSHEET_ACCESS_PASSWORD \
-#   export GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN) && \
-#   export DOCKER_GSHEET_ACCESS_PASSWORD=$(cat /run/secrets/DOCKER_GSHEET_ACCESS_PASSWORD) && \
-   #yarn gen
+FROM node
+RUN npm install -g yarn 
+
+
+RUN --mount=type=secret,id=GITHUB_TOKEN \
+  --mount=type=secret,id=DOCKER_GSHEET_ACCESS_PASSWORD \
+   export GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN) && \
+   export DOCKER_GSHEET_ACCESS_PASSWORD=$(cat /run/secrets/DOCKER_GSHEET_ACCESS_PASSWORD) && \
+   yarn gen
 
 #RUN mkdir scripts
 
