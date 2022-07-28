@@ -23,7 +23,7 @@ tokencodr::encrypt_token(service = "DOCKER_GSHEET_ACCESS",
                          destination = "~/src/docker_test/")
 
 # Locally Authenticate Google Sheets & Google Drive
-googlesheets4::gs4_auth(path = tokencodr::decrypt_token(service = "GSHEET_ACCESS",
-                                                        path = ".secret/GSHEET_ACCESS",
+googlesheets4::gs4_auth(path = tokencodr::decrypt_token(service = "DOCKER_GSHEET_ACCESS",
+                                                        path = ".secret/DOCKER_GSHEET_ACCESS",
                                                         complete = TRUE))
 
