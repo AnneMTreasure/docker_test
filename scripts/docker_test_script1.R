@@ -7,16 +7,16 @@ library(googlesheets4)
 
 ###### ---------- AUTHORISATIONS ---------- ######
 # this works locally
-gs4_auth(email = "*@talarify.co.za", path = "~/docker_test/.secret/DOCKER_GSHEET_ACCESS")
+#gs4_auth(email = "*@talarify.co.za", path = "~/docker_test/.secret/DOCKER_GSHEET_ACCESS")
 #gs4_auth(email = "*@talarify.co.za", path = "~/docker_test/sheets_service_account_key.json") # before making the json a secret
 
 # for GitHub Action (adapted from https://github.com/jdtrat/tokencodr-google-demo)
-#source("functions/func_auth_google.R")
+source("functions/func_auth_google.R")
 
 # Authenticate Google Service Account (adapted from https://github.com/jdtrat/tokencodr-google-demo)
-#auth_google(email = "*@talarify.co.za",
-#            service = "DOCKER_GSHEET_ACCESS",
-#            token_path = ".secret/DOCKER_GSHEET_ACCESS")
+auth_google(email = "*@talarify.co.za",
+            service = "DOCKER_GSHEET_ACCESS",
+            token_path = ".secret/DOCKER_GSHEET_ACCESS")
 
 
 ###### ---------- READ DATA FROM GOOGLE SHEET ---------- ######
