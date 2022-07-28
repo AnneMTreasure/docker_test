@@ -29,7 +29,7 @@ RUN install2.r -r https://cran.microsoft.com/snapshot/${MRAN_BUILD_DATE} \
     --error \
     googlesheets4
 
-FROM node
+FROM node:14.16.1
 RUN npm install -g yarn 
 
 
