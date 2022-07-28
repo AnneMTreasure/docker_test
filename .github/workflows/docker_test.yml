@@ -16,12 +16,13 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-20.04
-    container:
-      image: annemtreasure/dockertest
     
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}
+      DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}    
+    
+    container:
+      image: annemtreasure/dockertest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
