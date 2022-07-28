@@ -1,0 +1,27 @@
+Package: stakeholder.map.project
+Title: Using 'tokencodr' to access Google Sheets on Github Actions
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Anne",
+          family = "Treasure", 
+          role = c("aut", "cre"),
+          comment = c(ORCID = "0000-0002-8345-4811"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: es
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1.9000
+Imports: 
+    terra,
+    googlesheets4,
+    tokencodr (>= 0.0.0.9000),
+    tidyverse,
+    shiny,
+    leaflet,
+    DT,
+    tableHTML,
+    rsconnect
+Remotes: 
+    jdtrat/tokencodr
