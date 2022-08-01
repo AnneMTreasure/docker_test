@@ -13,8 +13,7 @@ Language: es
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1.9000
-
-#Imports: 
-#Remotes: 
+Imports:
+    tokencodr (>= 0.0.0.9000)
+Remotes: 
     jdtrat/tokencodr
-    
