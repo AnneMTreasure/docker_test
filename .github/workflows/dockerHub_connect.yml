@@ -13,10 +13,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04
-
-    env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}   
     
     steps:
       - name: Checkout 
@@ -39,20 +35,5 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockertest:latest
-          secrets: |
-            "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}"
-            "DOCKER_GSHEET_ACCESS_PASSWORD=${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}"
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/dockertest:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/dockertest:buildcache,mode=max
-
-          
-#      - name: Build and push
-#        uses: docker/build-push-action@v2
-#        with:
-#          context: ./
-#          file: ./Dockerfile
-#          builder: ${{ steps.buildx.outputs.name }}
-#          push: true
-#          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/dockertest:latest
-#          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/dockertest:buildcache
-#          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/dockertest:buildcache,mode=max

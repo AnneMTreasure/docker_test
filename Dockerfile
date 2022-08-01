@@ -29,17 +29,17 @@ RUN install2.r -r https://cran.microsoft.com/snapshot/${MRAN_BUILD_DATE} \
     --error \
     googlesheets4
 
-RUN curl https://deb.nodesource.com/setup_12.x | bash
-RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+#RUN curl https://deb.nodesource.com/setup_12.x | bash
+#RUN curl https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+#RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-RUN apt-get update && apt-get install -y nodejs yarn postgresql-client
+#RUN apt-get update && apt-get install -y nodejs yarn postgresql-client
 
-RUN --mount=type=secret,id=GITHUB_TOKEN \
-  --mount=type=secret,id=DOCKER_GSHEET_ACCESS_PASSWORD \
-   export GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN) && \
-   export DOCKER_GSHEET_ACCESS_PASSWORD=$(cat /run/secrets/DOCKER_GSHEET_ACCESS_PASSWORD) && \
-   yarn gen
+#RUN --mount=type=secret,id=GITHUB_TOKEN \
+#  --mount=type=secret,id=DOCKER_GSHEET_ACCESS_PASSWORD \
+#   export GITHUB_TOKEN=$(cat /run/secrets/GITHUB_TOKEN) && \
+#   export DOCKER_GSHEET_ACCESS_PASSWORD=$(cat /run/secrets/DOCKER_GSHEET_ACCESS_PASSWORD) && \
+#   yarn gen
 
 #RUN mkdir scripts
 
