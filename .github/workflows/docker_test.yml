@@ -37,8 +37,8 @@ jobs:
         with:
           image: annemtreasure/dockertest
           options:
-            --e GITHUB_PAT=${{ secrets.GITHUB_TOKEN }}
-            --e DOCKER_GSHEET_ACCESS_PASSWORD=${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}   
+            --env GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+            --env DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}   
           
       - name: Run-r-script
         run: | 
