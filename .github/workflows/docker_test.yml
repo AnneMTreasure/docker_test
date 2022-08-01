@@ -36,10 +36,10 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: annemtreasure/dockertest
-          options:
-            environment:
-              GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-              DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}   
+          #options:
+          environment:
+            GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+            DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}   
           
       - name: Run-r-script
         run: | 
