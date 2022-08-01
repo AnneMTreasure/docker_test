@@ -32,8 +32,8 @@ jobs:
         with:
           context: ./
           environment:
-            GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-            DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}   
+            - GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+            - DOCKER_GSHEET_ACCESS_PASSWORD: ${{ secrets.DOCKER_GSHEET_ACCESS_PASSWORD }}   
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
